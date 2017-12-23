@@ -30,15 +30,15 @@ If you want to run, you need to change the  php  file path of main.c.
 
  3. compiling and running
 	```
-git clone git@github.com:Tanswer/FastCGI.git
-cd FastCGI && make
-./main
-```
-found an error after running：
-`error:Unable to open primary script: /home/Tanswer/index.php (No such file or directory)`
+	git clone git@github.com:Tanswer/FastCGI.git
+	cd FastCGI && make
+	./main
+	```
+	found an error after running：
+	`error:Unable to open primary script: /home/Tanswer/index.php (No such file or directory)`
 
 	This is the issue of permissions, the permissions of index.php are：
-`-rw-r--r-- 1 Tanswer Tanswer 64 12月 23 13:16 index.php`.  From the above default configuration file can be seen, the account that started the php-fpm process is www, and here we change it to Tanswer，as follows：
+	`-rw-r--r-- 1 Tanswer Tanswer 64 12月 23 13:16 index.php`.  From the above default configuration file can be seen, the account that started the php-fpm process is www, and here we change it to Tanswer，as follows：
 
 	![enter image description here](http://test-1252727452.costj.myqcloud.com/github/2017-12-23%2013-54-15%20%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
 
